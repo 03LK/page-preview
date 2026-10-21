@@ -6,7 +6,8 @@
 
 ## Установка и использование
 
-Пакет подготовлен для публикации в области `@samurai9000`.
+Опубликованный пакет: [@samurai9000/page-preview](https://www.npmjs.com/package/@samurai9000/page-preview).
+Исходники: [03LK/page-preview](https://github.com/03LK/page-preview).
 
 ```sh
 npm install @samurai9000/page-preview@1.0.0
