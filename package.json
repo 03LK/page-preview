@@ -1,0 +1,15 @@
+{
+  "name": "@samurai9000/page-preview",
+  "version": "1.0.0",
+  "description": "Browser custom element for previewing the title and first heading of an HTML page",
+  "type": "module",
+  "exports": "./src/page-preview.js",
+  "files": ["src", "README.md", "LICENSE"],
+  "license": "MIT",
+  "publishConfig": { "access": "public" },
+  "scripts": {
+    "check": "node --check src/page-preview.js",
+    "prepublishOnly": "node scripts/check-package.mjs"
+  },
+  "keywords": ["web-component", "custom-element", "page-preview", "shadow-dom"]
+}
