@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Проверка page-preview</title>
+  <script type="module" src="../src/page-preview.js"></script>
+  <style>
+    body { margin: 50px auto; padding: 20px; max-width: 850px; background: #eef4ef; font-family: system-ui, sans-serif; color: #18332e; }
+    .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; }
+    nav { display: flex; gap: 10px; flex-wrap: wrap; margin: 25px 0; }
+    button { padding: 10px 15px; cursor: pointer; }
+  </style>
+</head>
+<body>
+  <h1>Предпросмотр страницы</h1>
+  <p>Каждая карточка независимо получает название документа и первый заголовок.</p>
+  <nav>
+    <button data-src="./example.html">Обычная страница</button>
+    <button data-src="./empty.html">Без названия и h1</button>
+    <button data-src="./safe.html">Текст с HTML</button>
+    <button data-src="./missing.html">Ошибка 404</button>
+  </nav>
+  <div class="grid">
+    <page-preview id="preview" src="./example.html"></page-preview>
+    <page-preview src="./missing.html"></page-preview>
+  </div>
+  <p><a href="../tests/">Открыть автоматические проверки</a></p>
+  <script type="module">
+    for (const button of document.querySelectorAll('button[data-src]')) {
+      button.addEventListener('click', () => {
+        document.querySelector('#preview').setAttribute('src', button.dataset.src);
+      });
+    }
+  </script>
+</body>
+</html>
